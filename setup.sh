@@ -9,6 +9,14 @@ apt-get update
 apt-get install docker-ce
 apt-get install docker-compose
 
+#remove all containers - by wonseok (2017/01/15)
+ docker rm -f $(docker ps -a -q)
+ for f in `docker images | grep -v IMAGE | awk '{split($0,array," ")} {print array[3]}'`
+ do 
+  echo "==> delete image : $f"
+  docker rmi $f 
+done
+
 # create necessary images
 docker build --tag node-nginx:test .
 cd nginx
