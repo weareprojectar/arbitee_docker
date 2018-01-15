@@ -1,5 +1,8 @@
 #! /bin/bash
-
+# Docker updater
+# @Author  wonseok
+# @date    2017/1/15
+# @details finding better way (now)
 
 # install Docker on server
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
